@@ -6,7 +6,7 @@ import { StyledTitle } from '../../../../styles/typography';
 import { CartContext } from '../../../../provides/CartContext';
 import { ICart } from '../../../../provides/@types';
 
-const CartProductCard = ({ name, img, id}: ICart) => {
+const CartProductCard = ({ name, img, id }: ICart) => {
 
   const { removeCart } = useContext(CartContext)
 

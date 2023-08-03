@@ -12,7 +12,7 @@ const ShopPage = () => {
   const { showProducts } = useContext(UserContext);
   const { products, setProducts } = useContext(UserContext);
 
-  const { modal, setModal } = useContext(CartContext);  
+  const { modal, setModal } = useContext(CartContext);
 
 
   useEffect(() => {

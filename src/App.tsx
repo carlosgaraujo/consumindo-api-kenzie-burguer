@@ -3,6 +3,7 @@ import { CartProvider } from './provides/CartContext';
 import { UserProvider } from './provides/UserContext';
 import Router from './routes';
 import { GlobalStyles } from './styles/global';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => (
   <UserProvider>
@@ -21,7 +22,6 @@ const App = () => (
         pauseOnHover
         theme='light'
       />
-      <ToastContainer />
     </CartProvider>
   </UserProvider>
 );
