@@ -7,10 +7,16 @@ import { IProducts } from '../../provides/@types';
 const ProductList = () => {
 
   const { products } = useContext(UserContext);
+  const { search } = useContext(UserContext);
+
+  const searchProducts = products.filter((produto) => search === ""
+      ? true
+      : produto.name.toLowerCase().includes(search.toLowerCase()) ||
+          produto.category.toLowerCase().includes(search.toLowerCase()));
 
   return (
     <StyledProductList>
-      {products.map((product: IProducts) => (
+      {searchProducts.map((product: IProducts) => (
         <ProductCard
           key={product.id}
           name={product.name}

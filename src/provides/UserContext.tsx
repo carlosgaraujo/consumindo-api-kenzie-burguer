@@ -25,10 +25,9 @@ export function UserProvider({ children }: IDefaultProviderProps) {
       try {
         const response = await api.get('/users');
         setUser(response.data.user);
-        navigate('/');
+        // navigate('/');
       } catch (error) {
-        console.log(error);
-        localStorage.removeItem('@TOKEN');
+        // localStorage.removeItem('@TOKEN');
       }
     }
   }
@@ -93,8 +92,10 @@ export function UserProvider({ children }: IDefaultProviderProps) {
     showProducts();
   }, []);
 
-
-
+  const searchProducts = products.filter((produto) => search === ""
+      ? true
+      : produto.name.toLowerCase().includes(search.toLowerCase()) ||
+          produto.category.toLowerCase().includes(search.toLowerCase()));
 
 
   return (
